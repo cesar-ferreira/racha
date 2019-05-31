@@ -60,24 +60,29 @@ class MainActivity : AppCompatActivity() {
     private fun refresh () {
 
         refresh.setOnClickListener {
-
             valueDistance.setText("")
             valueConsumption.setText("")
             valueFuel.setText("")
             valueDays.setProgress(1F)
             valueResult.text = ""
+            validatingForm()
+
 
         }
+
+
 
     }
 
     private fun autoComplete() {
         valueDefault.setOnClickListener {
 
-            valueDistance.setText(Companion.DISTANCE_TO_MY_HOUSE)
-            valueConsumption.setText(Companion.FUEL_CONSUMPTION)
+            valueDistance.setText(DISTANCE_TO_MY_HOUSE)
+            valueConsumption.setText(FUEL_CONSUMPTION)
+            validatingForm()
 
         }
+
     }
 
     private fun calculatesValue() {
@@ -102,7 +107,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun calculateMileageToPay(): Int {
 
-        return Companion.VALUE_OF_THE_DAY * valueDays.progress
+        return VALUE_OF_THE_DAY * valueDays.progress
 
     }
 
@@ -126,22 +131,59 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun validatingDistanceValue() {
+
+        if(valueDistance.text.toString() == ""){
+            isDistanceValid = false
+            valueDistance.error = "O valor não pode ser vazio"
+        } else {
+            isDistanceValid = true
+            valueDistance.error = null
+        }
+
+    }
+
+    private fun validatingConsumptionValue() {
+
+        if(valueConsumption.text.toString() == ""){
+            isConsumptionValid = false
+            valueConsumption.error = "O valor não pode ser vazio"
+        } else {
+            isConsumptionValid = true
+            valueConsumption.error = null
+        }
+
+    }
+
+    private fun validatingFuelValue() {
+
+        if(valueFuel.text.toString() == ""){
+            isFuelValid = false
+            valueFuel.error = "O valor não pode ser vazio"
+        } else {
+            isFuelValid = true
+            valueFuel.error = null
+        }
+
+    }
+
+
     private fun validatingForm(): Boolean{
+
+        validatingDistanceValue()
+        validatingConsumptionValue()
+        validatingFuelValue()
 
         var isValid = true
 
-
-        if(valueDistance.text.toString() == ""){
+        if(!isDistanceValid){
             isValid = false
-            valueDistance.error = "O valor não pode ser vazio"
         }
-        if(valueConsumption.text.toString() == ""){
+        if(!isConsumptionValid){
             isValid = false
-            valueConsumption.error = "O valor não pode ser vazio"
         }
-        if(valueFuel.text.toString() == ""){
+        if(!isFuelValid){
             isValid = false
-            valueFuel.error = "O valor não pode ser vazio"
         }
 
 

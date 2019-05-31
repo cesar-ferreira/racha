@@ -18,18 +18,17 @@
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-
             android:id="@+id/nameDistance"/>
 
     <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="0dp"
             app:layout_constraintTop_toBottomOf="@+id/nameDistance"
             android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:id="@+id/valueDistance"/>
     <TextView
             android:text="Consumo"
@@ -45,28 +44,34 @@
 
     <EditText
             android:id="@+id/valueConsumption"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             app:layout_constraintTop_toBottomOf="@+id/nameConsumption"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:layout_marginTop="16dp"/>
     <TextView
             android:text="Valor do combustivel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nameFuel" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp" android:layout_marginTop="32dp"
+            android:id="@+id/nameFuel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
             app:layout_constraintTop_toBottomOf="@+id/valueDistance"/>
 
-    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content"
-              app:layout_constraintTop_toBottomOf="@+id/nameFuel" app:layout_constraintStart_toStartOf="parent"
+    <EditText android:layout_width="80dp"
+              android:layout_height="wrap_content"
+              app:layout_constraintTop_toBottomOf="@+id/nameFuel"
+              app:layout_constraintStart_toStartOf="parent"
               android:layout_marginLeft="32dp"
-              android:inputType="number"
+              android:inputType="numberDecimal"
 
-              android:layout_marginStart="32dp" android:layout_marginTop="16dp"
+              android:layout_marginStart="32dp"
+              android:layout_marginTop="16dp"
               android:id="@+id/valueFuel"/>
 
 
@@ -78,7 +83,8 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/valueFuel" android:layout_marginTop="32dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/valueFuel"
+            android:layout_marginTop="32dp"/>
 
     <com.xw.repo.BubbleSeekBar
             android:id="@+id/valueDays"
@@ -86,7 +92,7 @@
             android:layout_height="wrap_content"
             app:bsb_bubble_color="@color/colorPrimary"
             app:bsb_bubble_text_color="@color/colorPrimaryDark"
-            app:bsb_max="40"
+            app:bsb_max="20"
             app:bsb_min="1"
             app:bsb_progress="1"
             app:bsb_second_track_color="@color/colorPrimary"
@@ -96,10 +102,13 @@
             app:bsb_show_section_mark="false"
             app:bsb_show_section_text="true"
             app:bsb_show_thumb_text="true"
-            app:bsb_track_color="@color/colorPrimary" android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="32dp"
+            app:bsb_track_color="@color/colorPrimary"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="32dp"
             android:layout_marginStart="32dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="32dp"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/nameDays"/>
 
@@ -108,18 +117,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:id="@+id/valueResult" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/valueDays" app:layout_constraintBottom_toTopOf="@+id/button"/>
+            android:id="@+id/valueResult"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/valueDays"
+            app:layout_constraintBottom_toTopOf="@+id/button"/>
 
     <Button
             android:text="Calcular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button" app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" android:layout_marginBottom="16dp"
+            android:id="@+id/button"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
     />
 
