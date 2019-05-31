@@ -81,6 +81,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculatesValue() {
+        validatingForm()
+//        when {
+//            validatingForm() -> {
+//                enableButton()
+//            }
+//            else -> disableButton()
+//        }
 
         button.setOnClickListener {
             valueResult.text = (calculateTheFuelPriceToBePaid()/2).toString()
@@ -116,6 +123,40 @@ class MainActivity : AppCompatActivity() {
     private fun calculateTheFuelPriceToBePaid(): Double {
 
         return calculateQuantityOfLitersOfFuelPayable() * valueFuel.text.toString().toDouble()
+
+    }
+
+    private fun validatingForm(): Boolean{
+
+        var isValid = true
+
+
+        if(valueDistance.text.toString() == ""){
+            isValid = false
+            valueDistance.error = "O valor não pode ser vazio"
+        }
+        if(valueConsumption.text.toString() == ""){
+            isValid = false
+            valueConsumption.error = "O valor não pode ser vazio"
+        }
+        if(valueFuel.text.toString() == ""){
+            isValid = false
+            valueFuel.error = "O valor não pode ser vazio"
+        }
+
+
+        return isValid
+    }
+
+    private fun disableButton() {
+
+        button.isEnabled = false
+
+    }
+
+    private fun enableButton() {
+
+        button.isEnabled = true
 
     }
 }
