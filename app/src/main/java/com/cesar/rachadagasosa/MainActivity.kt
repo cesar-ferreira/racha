@@ -135,6 +135,7 @@ class MainActivity : AppCompatActivity() {
 
         if(valueDistance.text.toString() == ""){
             isDistanceValid = false
+//            disableButton()
             valueDistance.error = "O valor não pode ser vazio"
         } else {
             isDistanceValid = true
@@ -147,6 +148,7 @@ class MainActivity : AppCompatActivity() {
 
         if(valueConsumption.text.toString() == ""){
             isConsumptionValid = false
+//            disableButton()
             valueConsumption.error = "O valor não pode ser vazio"
         } else {
             isConsumptionValid = true
@@ -159,6 +161,7 @@ class MainActivity : AppCompatActivity() {
 
         if(valueFuel.text.toString() == ""){
             isFuelValid = false
+//            disableButton()
             valueFuel.error = "O valor não pode ser vazio"
         } else {
             isFuelValid = true
